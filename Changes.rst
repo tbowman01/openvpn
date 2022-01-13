@@ -62,11 +62,17 @@ Optional ciphers in ``--data-ciphers``
     Ciphers in ``--data-ciphers`` can now be prefixed with a ``?`` to mark
     those as optional and only use them if the SSL library supports them.
 
-
 Improved ``--mssfix`` calculation
     The ``--mssfix`` option now allows an optional :code:`mtu` parameter to specify
     that different overhead for IPv4/IPv6 should taken into account and the resulting
     size is specified as the total size of the VPN packets including IP and UDP headers.
+
+Data channel offloading with ovpn-dco
+    2.6.0+ implements support for data-channel offloading where the data packets
+    are directly processed and forwarded in kernel space thanks to the ovpn-dco
+    kernel module. The userspace openvpn program acts purely as a control plane
+    application.
+
 
 Deprecated features
 -------------------
